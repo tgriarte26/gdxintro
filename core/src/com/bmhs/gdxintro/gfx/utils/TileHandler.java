@@ -5,7 +5,6 @@ import com.badlogic.gdx.utils.Array;
 import com.bmhs.gdxintro.gfx.assets.Tile;
 import com.bmhs.gdxintro.gfx.assets.WorldTile;
 public class TileHandler {
-
     public static TileHandler tileHandler = null;
     private int spriteOnSheetHeight, spriteOnSheetWidth;
     private String primaryColorSheetPath = "primaryColorSheet.png";
@@ -22,21 +21,25 @@ public class TileHandler {
         WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "black");
         worldTileArray.add(blackWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*3,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile whiteWorldTile = new WorldTile(tempRegion, 0, "black");
-        worldTileArray.add(whiteWorldTile);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*9,spriteOnSheetWidth,spriteOnSheetHeight);
+        WorldTile purpleWorldTile = new WorldTile(tempRegion, 1, "purple");
+        worldTileArray.add(purpleWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*2,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile redWorldTile = new WorldTile(tempRegion, 0, "black");
-        worldTileArray.add(redWorldTile);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*6,spriteOnSheetWidth,spriteOnSheetHeight);
+        WorldTile tealWorldTile = new WorldTile(tempRegion, 2, "teal");
+        worldTileArray.add(tealWorldTile);
 
         tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*4,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile yellowWorldTile = new WorldTile(tempRegion, 0, "black");
+        WorldTile yellowWorldTile = new WorldTile(tempRegion, 3, "yellow");
         worldTileArray.add(yellowWorldTile);
 
         tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*7,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile lightBlueWorldTile = new WorldTile(tempRegion, 0, "black");
+        WorldTile lightBlueWorldTile = new WorldTile(tempRegion, 4, "lightBlue");
         worldTileArray.add(lightBlueWorldTile);
+    }
+
+    public Array<WorldTile> getWorldTileArray() {
+        return worldTileArray;
     }
 
     public static TileHandler getTileHandler() {

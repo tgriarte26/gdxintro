@@ -6,18 +6,18 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.bmhs.gdxintro.gfx.utils.TileHandler;
 
 public class AppHandler extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
-	TextureRegion subImg;
 	int x, y;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("primaryColorSheet.png");
-		subImg = new TextureRegion(img, 64,0,128,128);
+
 		x = 0;
 		y = 0;
 	}
@@ -26,53 +26,62 @@ public class AppHandler extends ApplicationAdapter {
 	public void render () {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
-		batch.draw(subImg,x,y);
+
+		for(int r = 0; r < Gdx.graphics.getHeight(); r+=64) {
+			for(int c = 0; c < Gdx.graphics.getWidth(); c+=64) {
+				batch.draw(TileHandler.getTileHandler().getWorldTileArray().get(MathUtils.random(4)).getTexture(), c, r);
+				if(x > 4) {
+					x = 0;
+				}
+			}
+		}
+
+
 		batch.end();
+
 		checkInput();
 	}
 
-	public void checkInput(){
-		/*
-		if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
-			y += 100;
-			// y = y + 10;
-		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.S)) {
-			y -= 100;
-		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.A)) {
-			x -= 100;
-		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.D)) {
-			x += 100;
-		}
+	public void checkInput() {
+
+      /*
+      if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
+         y += 10;
+      }
+      else if(Gdx.input.isKeyJustPressed(Input.Keys.S)) {
+         y -= 10;
+      }
+      else if(Gdx.input.isKeyJustPressed(Input.Keys.A)) {
+         x -= 10;
+      }
+      else if(Gdx.input.isKeyJustPressed(Input.Keys.D)) {
+         x += 10;
+      }
 
 
+      System.out.println(Gdx.input.getX() + " " + Gdx.input.getY());
 
-		System.out.println(Gdx.input.getX() + " " + Gdx.input.getY());
+      x = Gdx.input.getX() - img.getWidth()/2;
+      y = Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2;
 
-		x = Gdx.input.getX() - img.getWidth()/2;
-		y = Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2;
 
-		 */
-
-		if(x < (Gdx.input.getX() - img.getWidth()/2)) {
-			x+=2;
-		}
-		if(x > (Gdx.input.getX() - img.getWidth()/2)) {
-			x-=2;
-		}
-		if(y > (Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2)) {
-			y-=20;
-		}
-		if(y < (Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2)) {
-			y+=20;
-		}
+      if(x < (Gdx.input.getX() - img.getWidth()/2)) {
+         x += 5;
+      }
+      if(x > (Gdx.input.getX() - img.getWidth()/2)) {
+         x -= 5;
+      }
+      if(y < (Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2)) {
+         y += 5;
+      }
+      if(y > (Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2)) {
+         y -= 5;
+      }
+*/
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
