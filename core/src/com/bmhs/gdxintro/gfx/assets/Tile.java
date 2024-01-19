@@ -19,7 +19,7 @@ public abstract class Tile {
         return defaultWorldTileHeight;
     }
 
-    public int getDefaultWourldTileWidth() {
+    public int getDefaultWorldTileWidth() {
         return defaultWorldTileWidth;
     }
 
