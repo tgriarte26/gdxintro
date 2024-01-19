@@ -18,23 +18,23 @@ public class TileHandler {
 
         Texture tempTexture = new Texture(primaryColorSheetPath);
 
-        TextureRegion tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*2,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
+        TextureRegion tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*4,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile blackWorldTile = new WorldTile(tempRegion, 0, "black");
         worldTileArray.add(blackWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*2,spriteOnSheetWidth,spriteOnSheetHeight);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*4,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile lightYellowWorldTile = new WorldTile(tempRegion, 1, "lightYellow");
         worldTileArray.add(lightYellowWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*3,spriteOnSheetWidth,spriteOnSheetHeight);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*6,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile goldWorldTile = new WorldTile(tempRegion, 2, "gold");
         worldTileArray.add(goldWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*4,spriteOnSheetWidth,spriteOnSheetHeight);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*0,spriteOnSheetHeight*8,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile mediumYellowWorldTile = new WorldTile(tempRegion, 3, "mediumYellow");
         worldTileArray.add(mediumYellowWorldTile);
 
-        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*1,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*2,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile whiteWorldTile = new WorldTile(tempRegion, 4, "white");
         worldTileArray.add(whiteWorldTile);
 
