@@ -17,9 +17,9 @@ public class TileHandler {
         spriteOnSheetWidth = Tile.ON_SCREEN_DEFAULT_WIDTH;
 
         Texture tempTexture = new Texture(primaryColorSheetPath);
-        TextureRegion tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*2,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile whiteWorldTile = new WorldTile(tempRegion, 0, "white");
-        worldTileArray.add(whiteWorldTile);
+        TextureRegion tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*14,spriteOnSheetHeight*2,spriteOnSheetWidth,spriteOnSheetHeight);
+        WorldTile blueWorldTile = new WorldTile(tempRegion, 0, "blue");
+        worldTileArray.add(blueWorldTile);
 
         tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*4,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
         WorldTile blackWorldTile = new WorldTile(tempRegion, 1, "black");
@@ -41,10 +41,17 @@ public class TileHandler {
         WorldTile tealWorldTile = new WorldTile(tempRegion, 5, "teal");
         worldTileArray.add(tealWorldTile);
 
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*12,spriteOnSheetHeight*2,spriteOnSheetWidth,spriteOnSheetHeight);
+        WorldTile teal2WorldTile = new WorldTile(tempRegion, 6, "teal2");
+        worldTileArray.add(teal2WorldTile);
+
         tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*10,spriteOnSheetHeight*2,spriteOnSheetWidth,spriteOnSheetHeight);
-        WorldTile brownWorldTile = new WorldTile(tempRegion, 6, "brown");
+        WorldTile brownWorldTile = new WorldTile(tempRegion, 7, "brown");
         worldTileArray.add(brownWorldTile);
 
+        tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*2,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
+        WorldTile whiteWorldTile = new WorldTile(tempRegion, 8, "white");
+        worldTileArray.add(whiteWorldTile);
         //JOLTEON
         /*
         TextureRegion tempRegion = new TextureRegion(tempTexture,spriteOnSheetWidth*2,spriteOnSheetHeight*0,spriteOnSheetWidth,spriteOnSheetHeight);
