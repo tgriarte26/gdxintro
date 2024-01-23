@@ -16,6 +16,7 @@ public class AppHandler extends ApplicationAdapter {
 	int x, y;
 
 	//SNORLAX
+
 	int[][] worldIntArray = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 							{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 							{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -72,14 +73,27 @@ public class AppHandler extends ApplicationAdapter {
 	*/
 
 
-
+	//int[][] worldIntArray = new int[25][40];
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-
+		//setRandomArray();
+		/*
+			pick a random [r][c] in Array and drop one pixel
+			search out that pixel, and r+1, r, r-1...change their colors
+		 */
 		x = 0;
 		y = 0;
 	}
+	/*
+	private void setRandomArray() {
+		for(int r = 0; r < worldIntArray.length; r++) {
+			for(int c = 0; c < worldIntArray[r].length; c++){
+				worldIntArray[r][c] = MathUtils.random(4);
+			}
+		}
+	}
+	*/
 
 	@Override
 	public void render () {
